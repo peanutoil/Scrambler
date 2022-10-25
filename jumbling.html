@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Jumble Time {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Jumble a word</h1>
+        <p>Please enter the word in the empty box and then click the Add button</p>
+    </div>
+</div>
+<div class="container">
+    <form class="form-group" method="POST">
+        <div class="row">
+            <div class="input-group col-sm-9">
+                <input class="form-control" type="text" name="word" required>
+                <div class = "input-group-btn">
+                    <input class="btn btn-danger" type="submit" value="Add">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

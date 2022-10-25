@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Jumbled Words {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Jumbled Words</h1>
+        <p>Make your choice</p>
+    </div>
+</div>
+<div class="container">
+    <form class="form-group" method="POST">
+        <a href="/jumble" class="btn btn-primary">Jumble a word</a>
+        <a href="/figureout" class="btn btn-success">Figure out the words</a>
+        <!--make a back button-->
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

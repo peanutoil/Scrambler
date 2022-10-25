@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Figuring Out Time {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+{% if allWords|length == 0 %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Oops!</h1>
+        <p>No words found</p>
+        <a href="/" class="btn btn-warning">Go Back</a>
+    </div>
+</div>
+{% else %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Figure out the words</h1>
+        <p>Fill in all the boxes and hit Finish to see your score!</p>
+    </div>
+</div>
+<div class="container">
+    <form class="form-group" method="POST">
+    {% for word in allWords %}
+    <p>{{word['word']}}</p>
+        <div class="row">
+            <div class="col-sm-9">
+                <input class="form-control" type="text" name={{word['_id']}} required>
+            </div>
+        </div>
+    {% endfor %}
+        <input class="btn btn-primary" type="submit" value="Finish">
+    </form>
+</div>
+{% endif %}
+{% endblock %}
+</body>
+</html>
